@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Coaching</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  
+    <% if signed_in? %> <!-- ユーザーがログインしているか調べる -->
+      <!-- ユーザーがログインしていた時の処理 -->
+      <h2> 現在 <%= current_coach.name %> さんがログインしています </h2> <!-- ここを追加します -->
+      <h4> メールアドレス： <%= current_coach.email %> </h4>
+      <li><%= link_to "ログアウト", destroy_coach_session_path, method: :delete %></li> <!-- ログアウトをする -->
+    <% else %>
+      <!-- ユーザーがログインしていなかった時の処理 -->
+      <h2>現在ログインしていません</h2>
+      <li><%= link_to "ログイン", new_coach_session_path, class: 'post' %></li> <!-- ログイン画面に移行する -->
+      <%= link_to "コーチ登録", new_coach_registration_path, class: 'btn btn-lg btn-primary' %> <!-- 新規登録画面に移行する -->
+      <%= link_to "生徒登録", '#', class: 'btn btn-lg btn-primary' %> <!-- 新規登録画面に移行する -->          
+        <% end %>
+
+  <div class="container">
+    <%= yield %>
+  </div>
+  </body>
+</html>
