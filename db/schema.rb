@@ -21,6 +21,12 @@ ActiveRecord::Schema.define(version: 2021_05_01_115658) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
+    t.integer "age"
+    t.string "sex"
+    t.integer "price"
+    t.text "career"
+    t.string "face_image"
+    t.integer "prefecture_id"
     t.index ["email"], name: "index_coaches_on_email", unique: true
     t.index ["reset_password_token"], name: "index_coaches_on_reset_password_token", unique: true
   end

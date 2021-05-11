@@ -7,9 +7,40 @@
     <%= f.label :email, "メールアドレス" %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
+  
   <div class="field">
     <%= f.label :name, "名前" %><br />
     <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :age, "年齢" %><br />
+    <%= f.text_field :age, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sex, "性別" %><br />
+    <%= f.text_field :sex, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price, "値段" %><br />
+    <%= f.text_field :price, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :career, "実績" %><br />
+    <%= f.text_field :career, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :face_image, "写真（顔がわかるもの)" %><br />
+    <%= f.email_field :face_image, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :prefecture_id, "都道府県" %><br />
+    <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name %>
   </div>
 
   <div class="field">

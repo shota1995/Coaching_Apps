@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   :sessions => 'coaches/sessions'   
 } 
   resources :coaches, only: [:show]
-
+  
   devise_scope :coach do
     #get "user/:id", :to => "coaches/registrations#detail"
     get "signup", :to => "coaches/registrations#new"
